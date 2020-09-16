@@ -65,7 +65,7 @@ export default {
     },
     goTo(filmData){
       var slug = filmData.title.replace(/\s/g, '');
-      this.$store.state.filmData = filmData;
+      this.$store.commit("setterFilmData", filmData);
       localStorage.FilmUrl = filmData.url;
       this.$router.push({name: 'Movie', params: {slug: slug}});
       
